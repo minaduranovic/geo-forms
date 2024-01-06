@@ -10,6 +10,7 @@ module ba.unsa.etf.rpr.lab1011 {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
 
     opens ba.unsa.etf.rpr to javafx.fxml;
     exports ba.unsa.etf.rpr;
