@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="400.0" prefWidth="538.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21  "  fx:controller="ba.unsa.etf.rpr.GlavnaController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  prefHeight="400.0" prefWidth="538.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21  "  fx:controller="ba.unsa.etf.rpr.GlavnaController">
     <center>
         <TableView fx:id="tableViewGradovi">
             <columns>
@@ -21,14 +21,14 @@
    <right>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
-               <Button fx:id="btnDodajGrad" prefWidth="89.0" text="Dodaj grad">
+               <Button fx:id="btnDodajGrad" prefWidth="89.0" text="Dodaj grad"  onAction="#onBtnDodajGrad" >
                <VBox.margin>
                   <Insets />
                </VBox.margin>
             </Button>
-               <Button fx:id="btnObrisiGrad" prefWidth="89.0" text="Obriši grad" />
-               <Button fx:id="btnIzmijeniGrad" prefWidth="89.0" text="Izmijeni grad" />
-               <Button fx:id="btnDodajDrzavu" text="Dodaj državu" />
+               <Button fx:id="btnObrisiGrad" prefWidth="89.0" text="Obriši grad" onAction="#onBtnObrisiGrad" />
+               <Button fx:id="btnIzmijeniGrad" prefWidth="89.0" text="Izmijeni grad"  onAction="#onBtnIzmijeniGrad"/>
+               <Button fx:id="btnDodajDrzavu" text="Dodaj državu" onAction="#onBtnDodajDrzavu"/>
          </children>
          <padding>
             <Insets bottom="5.0" left="6.0" right="2.0" top="2.0" />
