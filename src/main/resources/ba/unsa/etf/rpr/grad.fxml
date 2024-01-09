@@ -1,71 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox prefHeight="206.0" prefWidth="432.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="ba.unsa.etf.rpr.GradController">
-   <HBox prefHeight="100.0" prefWidth="200.0">
-      <children>
-         <Label prefHeight="27.0" prefWidth="124.0" text="Naziv:">
-            <font>
-               <Font size="14.0" />
-            </font>
-            <padding>
-               <Insets left="10.0" />
-            </padding>
-            <HBox.margin>
-               <Insets top="15.0" />
-            </HBox.margin>
-         </Label>
-         <TextField id="fieldNaziv" prefHeight="26.0" prefWidth="238.0">
-            <HBox.margin>
-               <Insets top="15.0" />
-            </HBox.margin>
-         </TextField>
-      </children>
-   </HBox>
-   <HBox prefHeight="100.0" prefWidth="348.0">
-      <children>
-         <Label prefHeight="26.0" prefWidth="124.0" text="Broj stanovnika:">
-            <font>
-               <Font size="14.0" />
-            </font>
-            <padding>
-               <Insets left="10.0" />
-            </padding>
-         </Label>
-         <TextField id="fieldBrojStanovnika" prefHeight="26.0" prefWidth="237.0" />
-      </children>
-   </HBox>
-   <HBox prefHeight="100.0" prefWidth="432.0">
-      <children>
-         <Label prefHeight="32.0" prefWidth="124.0" text="Država:">
-            <HBox.margin>
-               <Insets top="-10.0" />
-            </HBox.margin>
-            <padding>
-               <Insets left="10.0" />
-            </padding>
-         </Label>
-         <ChoiceBox id="choiceDrzava" prefHeight="26.0" prefWidth="236.0">
-            <HBox.margin>
-               <Insets top="-10.0" />
-            </HBox.margin>
-         </ChoiceBox>
-      </children>
-   </HBox>
-
-    <ButtonBar prefHeight="89.0" prefWidth="432.0">
-        <buttons>
-            <Button id="btnOk" fx:id="btnOk" text="Ok" translateX="-120.0" translateY="-15.0" />
-            <Button id="btnCancel" fx:id="btnCancel" text="Cancel" translateX="-100.0" translateY="-15.0" />
-        </buttons>
-    </ButtonBar>
-</VBox>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="265.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.GradController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="69.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="150.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <TextField fx:id="fieldNaziv" prefHeight="26.0" prefWidth="127.0" GridPane.columnIndex="1" />
+      <Label prefHeight="18.0" prefWidth="50.0" text="Naziv:">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="5.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Broj stanovnika:" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <ButtonBar prefHeight="47.0" prefWidth="229.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <buttons>
+            <Button fx:id="btnOk" mnemonicParsing="false" onAction="#btnOkAction" text="Ok">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></Button>
+            <Button fx:id="btnCan" mnemonicParsing="false" onAction="#zatvaranjeProzor" text="Cancel">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Button>
+         </buttons>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </ButtonBar>
+      <TextField fx:id="fieldBrStanovnika" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Država:" GridPane.rowIndex="2">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin></Label>
+      <ChoiceBox fx:id="choiceDrzava" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   </children>
+</GridPane>
